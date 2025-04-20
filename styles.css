@@ -1,0 +1,884 @@
+/* Base Styles */
+:root {
+    --primary-color: #2DBEB9;
+    --primary-light: #E6F7F6;
+    --primary-dark: #1A9A96;
+    --secondary-color: #4A6FA5;
+    --warning-color: #FFB84D;
+    --danger-color: #FF6B6B;
+    --success-color: #4CAF50;
+    --info-color: #3498db;
+    --text-primary: #333333;
+    --text-secondary: #666666;
+    --text-light: #999999;
+    --background-color: #F5F7FA;
+    --card-background: #FFFFFF;
+    --border-color: #E1E5EB;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --shadow-hover: 0 6px 16px rgba(0, 0, 0, 0.1);
+    --border-radius: 12px;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.app-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Header Styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: var(--card-background);
+    box-shadow: var(--shadow);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-icon {
+    width: 36px;
+    height: 36px;
+    margin-right: 10px;
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.hospital-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+#hospital-name {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+#hospital-location {
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.notification-bell {
+    position: relative;
+    cursor: pointer;
+}
+
+.notification-bell svg {
+    width: 24px;
+    height: 24px;
+}
+
+.notification-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: var(--danger-color);
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.patient-count {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.patient-count svg {
+    width: 20px;
+    height: 20px;
+}
+
+#total-patients {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.user-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: var(--primary-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.user-avatar svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Main Content Layout */
+.main-content {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 300px;
+    background-color: var(--card-background);
+    border-right: 1px solid var(--border-color);
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Dashboard */
+.dashboard {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Section Headers */
+.section-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-primary);
+    gap: 8px;
+}
+
+.section-title svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Card Styles */
+.card {
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 20px;
+    transition: var(--transition);
+    border: 1px solid var(--border-color);
+}
+
+.card:hover {
+    box-shadow: var(--shadow-hover);
+}
+
+.card h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.card h3 svg {
+    width: 18px;
+    height: 18px;
+}
+
+.card-header {
+    margin-bottom: 15px;
+}
+
+/* Stats Cards */
+.stats-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.stat-card {
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.stat-card:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-2px);
+}
+
+.stat-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-light);
+    border-radius: 12px;
+}
+
+.stat-icon svg {
+    width: 28px;
+    height: 28px;
+}
+
+.critical-icon {
+    background-color: rgba(255, 107, 107, 0.1);
+}
+
+.stat-content {
+    flex: 1;
+}
+
+.stat-content h3 {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 5px;
+}
+
+.stat-value {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.critical-value {
+    color: var(--danger-color);
+}
+
+/* Alerts Section */
+.alerts-section {
+    margin-bottom: 10px;
+}
+
+.alerts-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.alert-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 15px;
+    border-radius: var(--border-radius);
+    gap: 15px;
+    border-left: 4px solid;
+    background-color: white;
+    box-shadow: var(--shadow);
+}
+
+.alert-item.critical {
+    border-left-color: var(--danger-color);
+    background-color: rgba(255, 107, 107, 0.05);
+}
+
+.alert-item.warning {
+    border-left-color: var(--warning-color);
+    background-color: rgba(255, 184, 77, 0.05);
+}
+
+.alert-item.info {
+    border-left-color: var(--info-color);
+    background-color: rgba(52, 152, 219, 0.05);
+}
+
+.alert-item.success {
+    border-left-color: var(--success-color);
+    background-color: rgba(76, 175, 80, 0.05);
+}
+
+.alert-icon {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+}
+
+.alert-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.alert-content {
+    flex: 1;
+}
+
+.alert-content h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.alert-content p {
+    color: var(--text-secondary);
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.alert-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.alert-btn {
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    transition: var(--transition);
+}
+
+.alert-btn.primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.alert-btn.primary:hover {
+    background-color: var(--primary-dark);
+}
+
+.alert-btn.secondary {
+    background-color: transparent;
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+}
+
+.alert-btn.secondary:hover {
+    background-color: var(--background-color);
+}
+
+.empty-alerts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    color: var(--text-light);
+    text-align: center;
+}
+
+.empty-alerts svg {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 15px;
+}
+
+/* Disease Cards */
+.disease-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.disease-card {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    transition: var(--transition);
+}
+
+.disease-card:hover {
+    transform: translateY(-2px);
+}
+
+.disease-icon {
+    width: 48px;
+    height: 48px;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-light);
+    border-radius: 12px;
+}
+
+.disease-icon svg {
+    width: 28px;
+    height: 28px;
+}
+
+.disease-info {
+    flex: 1;
+}
+
+.disease-info h3 {
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.disease-info p {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.trend-percentage {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--success-color);
+}
+
+/* Charts Section */
+.charts-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.chart-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* Chart Cards */
+.chart-card {
+    height: 350px;
+}
+
+.chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.chart-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.chart-container {
+    height: calc(100% - 40px);
+    position: relative;
+}
+
+/* Forecast Card */
+.forecast-card {
+    position: relative;
+    background-color: #FAFBFD;
+}
+
+.forecast-indicator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    color: var(--text-secondary);
+    pointer-events: none;
+    z-index: 1;
+    border: 1px dashed var(--primary-color);
+}
+
+/* Feed Card */
+.feed-card {
+    height: auto;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.data-table th, .data-table td {
+    padding: 10px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.data-table th {
+    font-weight: 600;
+    color: var(--text-secondary);
+    font-size: 14px;
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+.data-table td {
+    font-size: 14px;
+}
+
+.data-table tr:hover td {
+    background-color: rgba(45, 190, 185, 0.05);
+}
+
+/* Equipment Card */
+.equipment-card {
+    height: 350px;
+    overflow-y: auto;
+}
+
+.equipment-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.equipment-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-radius: var(--border-radius);
+    background-color: var(--primary-light);
+    transition: var(--transition);
+}
+
+.equipment-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.equipment-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+.equipment-details {
+    flex: 1;
+}
+
+.equipment-name {
+    font-weight: 600;
+    margin-bottom: 3px;
+}
+
+.equipment-reason {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.equipment-quantity {
+    font-weight: 600;
+    color: var(--primary-dark);
+}
+
+.no-predictions {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: var(--text-light);
+    padding: 20px;
+}
+
+/* Form Styles */
+.form-container {
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.form-container h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: var(--text-primary);
+}
+
+.disease-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    margin-bottom: 0;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 14px;
+    transition: var(--transition);
+}
+
+.form-group input:focus, .form-group select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(45, 190, 185, 0.1);
+}
+
+.autocomplete-container {
+    position: relative;
+}
+
+.autocomplete-list {
+    position: absolute;
+    width: 100%;
+    background-color: white;
+    border: 1px solid var(--border-color);
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    z-index: 10;
+    max-height: 200px;
+    overflow-y: auto;
+    display: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.autocomplete-list div {
+    padding: 10px 12px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.autocomplete-list div:hover {
+    background-color: var(--primary-light);
+}
+
+.submit-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: var(--transition);
+    align-self: flex-end;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.submit-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+.submit-btn:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+/* Quick Actions */
+.quick-actions {
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+}
+
+.quick-actions h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: var(--text-primary);
+}
+
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 15px;
+    border-radius: 8px;
+    background-color: var(--primary-light);
+    color: var(--primary-dark);
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.action-btn:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.action-btn svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* Chart Legend Item */
+.legend-item {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    color: var(--text-secondary);
+    padding: 4px 8px;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+.legend-item:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.legend-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+    margin-right: 5px;
+}
+
+/* Datalabels */
+.datalabel {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+    .chart-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .disease-cards, .stats-cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .main-content {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+    }
+    
+    .disease-form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+    
+    .submit-btn {
+        grid-column: span 2;
+    }
+    
+    .quick-actions {
+        margin-top: 0;
+    }
+    
+    .action-buttons {
+        flex-direction: row;
+    }
+    
+    .action-btn {
+        flex: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .hospital-info {
+        align-items: flex-start;
+        margin: 10px 0;
+    }
+    
+    .user-info {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .disease-cards, .stats-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .disease-form {
+        grid-template-columns: 1fr;
+    }
+    
+    .submit-btn {
+        grid-column: 1;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+    }
+}
